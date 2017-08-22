@@ -43,7 +43,7 @@ Olivia[O]
       I see.
     }
 
-    @MC {
+    @MC:s {
       $Prince, I'm so sorry. I should have told you earlier, before all of this.
     }
 
@@ -64,23 +64,23 @@ Olivia[O]
       You're standing alone by the maze entrance when Bertrand, and Maxwell come out into the palace grounds.
     }
 
-    @B {
+    @B:n {
       TODO says something
     }
 
-    @M {
+    @M:n {
       Wait, where's $P?
     }
 
-    @MC {
+    @MC:s {
       I... told $P that I'm falling for Drake.
     }
 
-    @B {
+    @B:a {
       _What?!_ No. No. No. No--
     }
 
-    @M {
+    @M:o {
       TODO finish this scene
     }
 
@@ -92,11 +92,11 @@ Olivia[O]
       TODO Drake sees you and comes over
     }
 
-    @D {
+    @D:o {
       TODO $LN !!
     }
 
-    @A {
+    @A:n {
       I...
       <[3.1] TODO upset/argumentative>
       <[3.2] TODO sad/shrivels up>
@@ -104,44 +104,44 @@ Olivia[O]
     }
 
     % if 3.1 %
-      @D {
+      @D:n {
         TODO reacts to upset/argumentative
       }
 
-      @MC {
+      @MC:n {
         TODO response
       }
     % end if 3.1 %
 
     % if 3.1 %
-      @D {
+      @D:s {
         TODO reacts to sad/shrivels up
       }
 
-      @ MC {
+      @ MC:s {
         TODO response
       }
     % end if 3.1 %
 
     % if 3.1 %
-      @D {
+      @D:a {
         TODO reacts to excited/stays chipper
       }
 
-      @ MC {
+      @ MC:a {
         TODO response
       }
     % end if 3.1 %
 
-    @D {
+    @D:n {
       TODO all paths should lead here, argument gets resolved
     }
 
-    @MC {
+    @MC:h {
       Did we just have our first fight? TODO change this line later; it's ridiculous
     }
 
-    @D {
+    @D:h {
       Heh.
     }
 
