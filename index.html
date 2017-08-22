@@ -9,7 +9,11 @@
     <link href="https://fonts.googleapis.com/css?family=Boogaloo" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="js/globals.js" defer></script>
+    <script src="js/game-screen.js" defer></script>
+    <script src="js/feedback-screen.js" defer></script>
     <script src="js/app.js" defer></script>
+    <script src="js/main.js" defer></script>
 </head>
 
 <body>
@@ -20,10 +24,7 @@
             </h2>
             <p>
                 hi everyone :) i was frustrated after the final chapter of trr book 1... so i decided to make the drake x mc finale that i wanted.
-            </p>
-
-            <p>
-                it was really fun to make, and i hope you enjoy. also, if you would like to write your own script, i can show you the format--please let me know!
+                it was really fun to make, and i hope you enjoy. also, if you would like to write your own script, i can show you the format--just let me know!
                 <a href="http://chrysxandria-m.tumblr.com">chrysxandria-m.tumblr.com</a>
             </p>
 
@@ -36,23 +37,25 @@
                 note: the game restarts if you refresh!
             </p>
 
-            <div class="questions">
-                <h3>
-                    To play, please name your MC and Prince:
-                </h3>
-                <div>
-                    Your MC's first name:
-                    <input id="mc-first-name" type="text">
-                </div>
-                <div>
-                    Your MC's last name:
-                    <input id="mc-last-name" type="text">
-                </div>
-                <div>
-                    The Prince's name:
-                    <input id="prince-first-name" type="text">
-                </div>
-                <input type="button" value="submit and start game">
+            <div id="questions">
+                <form onsubmit="app.startGame(); return false;">
+                    <h3>
+                        To play, please name your MC and Prince:
+                    </h3>
+                    <div>
+                        Your MC's first name:
+                        <input id="mc-first-name" type="text">
+                    </div>
+                    <div>
+                        Your MC's last name:
+                        <input id="mc-last-name" type="text">
+                    </div>
+                    <div>
+                        The Prince's name:
+                        <input id="prince-first-name" type="text">
+                    </div>
+                    <input type="submit" value="submit and start game">
+                </form>
             </div>
         </header>
 
@@ -69,7 +72,7 @@
                 </div>
             </section>
 
-            <section id="choice-box">
+            <section id="choice-box" class="inactive">
                 <div class="profile">
                 </div>
                 <div class="name">
@@ -91,7 +94,7 @@
                 </div>
             </section>
 
-            <section id="non-mc-box">
+            <section id="non-mc-box" class="inactive">
                 <div class="right-align">
                     <div class="profile">
                 </div>
@@ -104,7 +107,7 @@
                 </div>
             </section>
 
-            <section id="narrator-box">
+            <section id="narrator-box" class="inactive">
                 <div class="name">
                     ...
                 </div>
@@ -117,18 +120,16 @@
 
         <footer>
             <h2>
-                mid-game reactions?
+                feedback/reactions?
             </h2>
             <p>
                 ty for helping me become a better writer :)
             </p>
-            <div>
-                <textarea id="comment" rows="2" placeholder="your comment here"></textarea>
-            </div>
-            <div>
-                <textarea id="contact" rows="1" placeholder="email/tumblr"></textarea>
-            </div>
-            <input type="button" value="submit (doesn't interrupt game)">
+            <form action="https://formspree.io/chrysxandria.m@gmail.com" method="POST">
+                <textarea name="comment" rows="3" placeholder="your comment here"></textarea>
+                <input type="text" name="contact" placeholder="optional email/tumblr">
+                <input type="submit" value="submit">
+            </form>
         </footer>
     </div>
 </body>
