@@ -13,280 +13,280 @@ Olivia[O]
 
 # start scene with Prince
 @P:h {
-  $MC... I love you.
+    $MC... I love you.
 }
 @MC:n {
-  $P...
-  <[1.1*] I love you too.>
-  <[1.2*] I'm not sure about this.>
-  <[1.3] I'm so sorry... I'm in love with someone else.>
+    $P...
+    <[1.1*] I love you too.>
+    <[1.2*] I'm not sure about this.>
+    <[1.3] I'm so sorry... I'm in love with someone else.>
 }
 
 % if 1.3 %
-  @P:o {
-    ...
-  }
-  @P:s {
-    You're...? I'm not sure I...
-  }
-  @MC:s {
-    I'm falling for...
-    <[2.1] Drake.>
-    <[2.2*] Hana.>
-  }
-
-  % if 2.1 %
+    @P:o {
+        ...
+    }
     @P:s {
-      I see.
+        You're...? I'm not sure I...
     }
     @MC:s {
-      $Prince, I'm so sorry. I should have told you earlier, before all of this.
-    }
-    @P:s {
-      $MC... I want you to know, I still mean everything I said.
-    }
-    @ You look down at your hands. A long silence settles between the two of you.
-    @P:s {
-      I'm sorry, I need a moment alone.
-    }
-    @ {
-      $P does his best to put on a brave smile, but you see the pain in his eyes before he walks away.
+        I'm falling for...
+        <[2.1] Drake.>
+        <[2.2*] Hana.>
     }
 
-    # start scene with Bertrand and Maxwell
-    @ {
-      You're standing alone by the maze entrance when Bertrand, and Maxwell come out into the palace grounds.
-    }
-    @B:n {
-      TODO says something
-    }
-    @M:n {
-      Wait, where's $P?
-    }
-    @MC:s {
-      I... told $P that I'm falling for Drake.
-    }
-    @B:a {
-      _What?!_ No. No. No. No--
-    }
-    @M:o {
-      You did what??
-    }
-    @B:n {
-      What?! No. No, no, no--
-    }
-    @ {
-      Bertrand's face is cloudy with desperation.
-    }
-    @M:n {
-      Bertrand--
-    }
-    @B:a {
-      Don't utter a word, Maxwell. You were the one who brought her here.
-    }
-    @M:s {
-      I know.
-    }
-    @B:s {
-      House Beaumont is completely, utterly ruined. Ruined! Did we matter at all to you, $MC?
-    }
-    @MC {
-      Bertrand,
-      <[3.1] You did, I mean, you do-->
-      <[3.2] Nope.>
-    }
+    % if 2.1 %
+        @P:s {
+            I see.
+        }
+        @MC:s {
+            $Prince, I'm so sorry. I should have told you earlier, before all of this.
+        }
+        @P:s {
+            $MC... I want you to know, I still mean everything I said.
+        }
+        @ You look down at your hands. A long silence settles between the two of you.
+        @P:s {
+            I'm sorry, I need a moment alone.
+        }
+        @ {
+            $P does his best to put on a brave smile, but you see the pain in his eyes before he walks away.
+        }
 
-    % if 3.1 %
-      @B:n {
-        Clearly not.
-      }
-      @ {
-        Bertrand turns sharply, wringing his hands. He almost stumbles into a table as he hurries away.
-      }
-      @ {
-        You turn to Maxwell. His shoulders are slumped, and he avoids your gaze.
-      }
-      @MC:n {
-        Maxwell, I'm so sorry--
-      }
-      @M:s {
-        I was so close to finally doing something right...
-      }
-      @M:n {
-        But I failed again.
-      }
-      @MC:n {
-        This isn't your fault.
-      }
-      @M:s {
-        $MC, you know you were $Prince's one shot at being really happy, right?
-      }
-      @MC:s {
-        I know.
-      }
-      @M:n {
-        I mean, your happiness matters too...
-      }
-      @M:s {
-        It's just, so many things--so many people--are ruined now.
-      }
-      @M:n {
-        I need to go find $Prince.
-      }
-      @ {
-        Maxwell shakes his head sadly and walks deeper into the hedges.
-      }
-    % end if 3.1 %
+        # start scene with Bertrand and Maxwell
+        @ {
+            You're standing alone by the maze entrance when Bertrand, and Maxwell come out into the palace grounds.
+        }
+        @B:n {
+            TODO says something
+        }
+        @M:n {
+            Wait, where's $P?
+        }
+        @MC:s {
+            I... told $P that I'm falling for Drake.
+        }
+        @B:a {
+            _What?!_ No. No. No. No--
+        }
+        @M:o {
+            You did what??
+        }
+        @B:n {
+            What?! No. No, no, no--
+        }
+        @ {
+            Bertrand's face is cloudy with desperation.
+        }
+        @M:n {
+            Bertrand--
+        }
+        @B:a {
+            Don't utter a word, Maxwell. You were the one who brought her here.
+        }
+        @M:s {
+            I know.
+        }
+        @B:s {
+            House Beaumont is completely, utterly ruined. Ruined! Did we matter at all to you, $MC?
+        }
+        @MC {
+            Bertrand,
+            <[3.1] You did, I mean, you do-->
+            <[3.2] Nope.>
+        }
 
-    % if 3.2 %
-      @B:n {
-        Serves me right to trust people.
-      }
-      @ {
-        Bertrand turns sharply, wringing his hands. He almost stumbles into a table as he hurries away.
-      }
-      @ {
-        You turn to Maxwell. His shoulders are slumped, and hurt is written all over his eyes.
-      }
-      @M:s {
-        So we didn't matter to you, huh? $Prince didn't matter to you either.
-      }
-      @MC:n {
-        Maxwell, I--
-      }
-      @M:a {
-        I thought you were different from all the others. I really thought you were!
-      }
-      @MC:n {
-        I am different.
-      }
-      @M:s {
-        Nope, not at all. $MC, I don't think you'll ever know just how many lives you destroyed today. Even Drake's.
-      }
-      @M:n {
-        You're a terrible person, $MC.
-      }
-      @ {
-        Before you have a chance to respond, Maxwell leaves.
-      }
-    % end if 3.2 %
+        % if 3.1 %
+            @B:n {
+                Clearly not.
+            }
+            @ {
+                Bertrand turns sharply, wringing his hands. He almost stumbles into a table as he hurries away.
+            }
+            @ {
+                You turn to Maxwell. His shoulders are slumped, and he avoids your gaze.
+            }
+            @MC:n {
+                Maxwell, I'm so sorry--
+            }
+            @M:s {
+                I was so close to finally doing something right...
+            }
+            @M:n {
+                But I failed again.
+            }
+            @MC:n {
+                This isn't your fault.
+            }
+            @M:s {
+                $MC, you know you were $Prince's one shot at being really happy, right?
+            }
+            @MC:s {
+                I know.
+            }
+            @M:n {
+                I mean, your happiness matters too...
+            }
+            @M:s {
+                It's just, so many things--so many people--are ruined now.
+            }
+            @M:n {
+                I need to go find $Prince.
+            }
+            @ {
+                Maxwell shakes his head sadly and walks deeper into the hedges.
+            }
+        % end if 3.1 %
+
+        % if 3.2 %
+            @B:n {
+                Serves me right to trust people.
+            }
+            @ {
+                Bertrand turns sharply, wringing his hands. He almost stumbles into a table as he hurries away.
+            }
+            @ {
+                You turn to Maxwell. His shoulders are slumped, and hurt is written all over his eyes.
+            }
+            @M:s {
+                So we didn't matter to you, huh? $Prince didn't matter to you either.
+            }
+            @MC:n {
+                Maxwell, I--
+            }
+            @M:a {
+                I thought you were different from all the others. I really thought you were!
+            }
+            @MC:n {
+                I am different.
+            }
+            @M:s {
+                Nope, not at all. $MC, I don't think you'll ever know just how many lives you destroyed today. Even Drake's.
+            }
+            @M:n {
+                You're a terrible person, $MC.
+            }
+            @ {
+                Before you have a chance to respond, Maxwell leaves.
+            }
+        % end if 3.2 %
 
 
-    # start scene with Hana
-    @ {
-      Heart pounding, you head into the castle to find Drake, and almost ram into Hana at the door.
-    }
-    @H:n {
-      $MC! What's wrong?
-    }
-    @MC:o {
-      Hana! Uhhh... I told $Prince that I love Drake.
-    }
-    @H:o {
-      ...!
-    }
-    @ {
-      Hana hugs you.
-    }
-    @H:n {
-      I actually know exactly how you're feeling right now...
-    }
-    @MC:n {
-      Haha. You really do, don't you?
-    }
-    @H:n {
-      Wait, where's Drake?
-    }
-    @ {
-      You both scan the room for Drake, but he is nowhere to be found. Instead, you see Olivia speaking to the Queen. She curtsies, then strides out of the palace. She looks like she's on the verge of tears.
-    }
+        # start scene with Hana
+        @ {
+            Heart pounding, you head into the castle to find Drake, and almost ram into Hana at the door.
+        }
+        @H:n {
+            $MC! What's wrong?
+        }
+        @MC:o {
+            Hana! Uhhh... I told $Prince that I love Drake.
+        }
+        @H:o {
+            ...!
+        }
+        @ {
+            Hana hugs you.
+        }
+        @H:n {
+            I actually know exactly how you're feeling right now...
+        }
+        @MC:n {
+            Haha. You really do, don't you?
+        }
+        @H:n {
+            Wait, where's Drake?
+        }
+        @ {
+            You both scan the room for Drake, but he is nowhere to be found. Instead, you see Olivia speaking to the Queen. She curtsies, then strides out of the palace. She looks like she's on the verge of tears.
+        }
 
-    # start scene with Olivia
-    @ {
-      ...Later, after Olivia explains her situation...
-    }
-    @O:n {
-      You can't leave $Prince in Madeleine's clutches.
-    }
-    @M:n {
-      Actually, Olivia... I told $Prince that I love someone else.
-    }
-    @O:o {
-      ...!
-    }
-    @MC:n {
-      So I'm out of the running.
-    }
-    @O:n {
-    How... ironic. I wished for that during this entire social season...
-    }
-    @O:n {
-      But now... I cannot believe you at all.
-    }
-    @O:a {
-      He loved you, you know that right? You had the only thing I ever wanted, and you just threw it away.
-    }
-    @MC:n {
-      You're not the first to tell me.
-    }
-    @O:s {
-      I will never forgive you for hurting $Prince.
-    }
+        # start scene with Olivia
+        @ {
+            ...Later, after Olivia explains her situation...
+        }
+        @O:n {
+            You can't leave $Prince in Madeleine's clutches.
+        }
+        @M:n {
+            Actually, Olivia... I told $Prince that I love someone else.
+        }
+        @O:o {
+            ...!
+        }
+        @MC:n {
+            So I'm out of the running.
+        }
+        @O:n {
+        How... ironic. I wished for that during this entire social season...
+        }
+        @O:n {
+            But now... I cannot believe you at all.
+        }
+        @O:a {
+            He loved you, you know that right? You had the only thing I ever wanted, and you just threw it away.
+        }
+        @MC:n {
+            You're not the first to tell me.
+        }
+        @O:s {
+            I will never forgive you for hurting $Prince.
+        }
 
-    # start scene with Drake
-    @ {
-      TODO Drake sees you and comes over
-    }
-    @D:o {
-      TODO $LN !!
-    }
-    @A:n {
-      I...
-      <[3.1] TODO upset/argumentative>
-      <[3.2] TODO sad/shrivels up>
-      <[3.3] TODO excited/stays chipper?>
-    }
+        # start scene with Drake
+        @ {
+            TODO Drake sees you and comes over
+        }
+        @D:o {
+            TODO $LN !!
+        }
+        @A:n {
+            I...
+            <[3.1] TODO upset/argumentative>
+            <[3.2] TODO sad/shrivels up>
+            <[3.3] TODO excited/stays chipper?>
+        }
 
-    % if 3.1 %
-      @D:n {
-        TODO reacts to upset/argumentative
-      }
-      @MC:n {
-        TODO response
-      }
-    % end if 3.1 %
+        % if 3.1 %
+            @D:n {
+                TODO reacts to upset/argumentative
+            }
+            @MC:n {
+                TODO response
+            }
+        % end if 3.1 %
 
-    % if 3.1 %
-      @D:s {
-        TODO reacts to sad/shrivels up
-      }
-      @ MC:s {
-        TODO response
-      }
-    % end if 3.1 %
+        % if 3.1 %
+            @D:s {
+                TODO reacts to sad/shrivels up
+            }
+            @ MC:s {
+                TODO response
+            }
+        % end if 3.1 %
 
-    % if 3.1 %
-      @D:a {
-        TODO reacts to excited/stays chipper
-      }
-      @ MC:a {
-        TODO response
-      }
-    % end if 3.1 %
+        % if 3.1 %
+            @D:a {
+                TODO reacts to excited/stays chipper
+            }
+            @ MC:a {
+                TODO response
+            }
+        % end if 3.1 %
 
-    @D:n {
-      TODO all paths should lead here, argument gets resolved
-    }
-    @MC:h {
-      Did we just have our first fight? TODO change this line later; it's ridiculous
-    }
-    @D:h {
-      Heh.
-    }
-  % end if 2.1 %
+        @D:n {
+            TODO all paths should lead here, argument gets resolved
+        }
+        @MC:h {
+            Did we just have our first fight? TODO change this line later; it's ridiculous
+        }
+        @D:h {
+            Heh.
+        }
+    % end if 2.1 %
 
 % end if 3 %
 
 @ {
-  Thanks for playing! Let me know what you think https://chrysxandria-m.tumblr.com
+    Thanks for playing! Let me know what you think https://chrysxandria-m.tumblr.com
 }
