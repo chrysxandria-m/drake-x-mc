@@ -1,0 +1,154 @@
+% characters %
+
+MC[MC]
+LN[LN]
+Prince[P]
+Drake[D]
+Hana[H]
+Maxwell[M]
+Bertrand[B]
+Olivia[O]
+
+% end characters %
+
+# start scene with Prince
+@P:h {
+  $MC... I love you.
+}
+
+@MC:n {
+  $P...
+  <[1.1*] I love you too.>
+  <[1.2*] I'm not sure about this.>
+  <[1.3] I'm so sorry... I'm in love with someone else.>
+}
+
+% if 1.3 %
+  @P:o {
+    ...
+  }
+
+  @P:s {
+    You're...? I'm not sure I...
+  }
+
+  @MC:s {
+    I'm falling for...
+    <[2.1] Drake.>
+    <[2.2*] Hana.>
+  }
+
+  % if 2.1 %
+    @P:s {
+      I see.
+    }
+
+    @MC {
+      $Prince, I'm so sorry. I should have told you earlier, before all of this.
+    }
+
+    @P:s {
+      $MC... I want you to know, I still mean everything I said.
+    }
+
+    @P:s {
+      I'm sorry, I need a moment alone.
+    }
+
+    @ {
+      $P tries to put on a brave smile, but you see the pain in his eyes before he walks away.
+    }
+
+    # start scene with Bertrand and Maxwell
+    @ {
+      You're standing alone by the maze entrance when Bertrand, and Maxwell come out into the palace grounds.
+    }
+
+    @B {
+      TODO says something
+    }
+
+    @M {
+      Wait, where's $P?
+    }
+
+    @MC {
+      I... told $P that I'm falling for Drake.
+    }
+
+    @B {
+      _What?!_ No. No. No. No--
+    }
+
+    @M {
+      TODO finish this scene
+    }
+
+    # start scene with Hana TODO
+    # start scene with Olivia TODO
+
+    # start scene with Drake
+    @ {
+      TODO Drake sees you and comes over
+    }
+
+    @D {
+      TODO $LN !!
+    }
+
+    @A {
+      I...
+      <[3.1] TODO upset/argumentative>
+      <[3.2] TODO sad/shrivels up>
+      <[3.3] TODO excited/stays chipper?>
+    }
+
+    % if 3.1 %
+      @D {
+        TODO reacts to upset/argumentative
+      }
+
+      @MC {
+        TODO response
+      }
+    % end if 3.1 %
+
+    % if 3.1 %
+      @D {
+        TODO reacts to sad/shrivels up
+      }
+
+      @ MC {
+        TODO response
+      }
+    % end if 3.1 %
+
+    % if 3.1 %
+      @D {
+        TODO reacts to excited/stays chipper
+      }
+
+      @ MC {
+        TODO response
+      }
+    % end if 3.1 %
+
+    @D {
+      TODO all paths should lead here, argument gets resolved
+    }
+
+    @MC {
+      Did we just have our first fight? TODO change this line later; it's ridiculous
+    }
+
+    @D {
+      Heh.
+    }
+
+  % end if 2.1 %
+
+% end if 3 %
+
+@ {
+  Thanks for playing! Let me know what you think https://chrysxandria-m.tumblr.com
+}

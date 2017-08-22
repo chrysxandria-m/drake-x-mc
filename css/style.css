@@ -1,0 +1,17 @@
+header {
+  padding: 15px;
+  border: 2px solid black;
+  margin: 10px;
+}
+
+section {
+  padding: 30px;
+  border: 1px solid blue;
+  margin: 10px;
+}
+
+footer {
+  padding: 15px;
+  border: 2px solid black;
+  margin: 10px;
+}
