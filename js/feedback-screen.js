@@ -1,13 +1,13 @@
 class FeedbackScreen {
-  constructor(containerElement) {
-    this.containerElement = containerElement;
-  }
+    constructor(containerElement) {
+        this.containerElement = containerElement;
+    }
 
-  show() {
-    this.containerElement.classList.remove('inactive');
-  }
+    show() {
+        this.containerElement.classList.remove('inactive');
+    }
 
-  hide() {
-    this.containerElement.classList.add('inactive');
-  }
+    hide() {
+        this.containerElement.classList.add('inactive');
+    }
 }
