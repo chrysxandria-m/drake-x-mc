@@ -1,5 +1,11 @@
 class App {
     constructor() {
+        this.names = {
+            mcFirstName: 'Riley',
+            mcLastName: 'Tennant',
+            princeFirstName: 'Liam',
+        }
+
         // bind
         this.startGame = this.startGame.bind(this);
         this.finishGame = this.finishGame.bind(this);
@@ -22,18 +28,18 @@ class App {
         var mcLastName = document.querySelector('#mc-last-name').value;
         var princeFirstName = document.querySelector('#prince-first-name').value;
         if (mcFirstName.length > 0) {
-                g.mcFirstName = mcFirstName;
+                this.names.mcFirstName = mcFirstName;
         }
         if (mcLastName.length > 0) {
-                g.mcLastName = mcLastName;
+                this.names.mcLastName = mcLastName;
         }
         if (princeFirstName.length > 0) {
-                g.princeFirstName = princeFirstName;
+                this.names.princeFirstName = princeFirstName;
         }
 
         // update script
         var scriptFile = document.querySelector('#script-file').value;
-        this.gameScreen.scriptReader.setScript(scriptFile);
+        this.gameScreen.scriptReader.setScript(scriptFile, this.names);
 
         // hide intro screen
         const introElem = document.querySelector('#questions');

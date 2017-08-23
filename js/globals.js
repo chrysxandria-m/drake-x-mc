@@ -1,5 +1,5 @@
 var g = {
-    moodColors: {
+    emotions: {
         h: ['7AC3CC', '3083A3'], // happy
         s: ['74797f', '282c33'], // sad
         a: ['984B52', '3E080C'], // angry
@@ -7,11 +7,16 @@ var g = {
         o: ['FEBD60', 'CD6F2E'], // :O
     },
 
-    oliviaRel: 4,
+    types: {
+        mc: 'mc-box',
+        choice: 'choice-box',
+        other: 'non-mc-box',
+        narrator: 'narrator-box',
+    },
 
-    mcFirstName: 'Riley',
-    mcLastName: 'Tennant',
-    princeFirstName: 'Liam',
+    // TODO make it mobile-friendly
+    // TODO test on safari + firefox + safari mobile + chrome mobile
+    // TODO investigate polyfill
 
-    currChoices: [],
+    // longer-term TODO incorporate images
 }
