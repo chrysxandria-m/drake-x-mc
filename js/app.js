@@ -24,9 +24,9 @@ class App {
 
     startGame() {
         // update player-defined names
-        var mcFirstName = document.querySelector('#mc-first-name').value;
-        var mcLastName = document.querySelector('#mc-last-name').value;
-        var princeFirstName = document.querySelector('#prince-first-name').value;
+        const mcFirstName = document.querySelector('#mc-first-name').value;
+        const mcLastName = document.querySelector('#mc-last-name').value;
+        const princeFirstName = document.querySelector('#prince-first-name').value;
         if (mcFirstName.length > 0) {
                 this.names.mcFirstName = mcFirstName;
         }
@@ -38,7 +38,7 @@ class App {
         }
 
         // update script
-        var scriptFile = document.querySelector('#script-file').value;
+        const scriptFile = document.querySelector('#script-file').value;
         this.gameScreen.scriptReader.setScript(scriptFile, this.names);
 
         // hide intro screen

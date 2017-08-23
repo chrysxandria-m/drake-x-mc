@@ -25,9 +25,9 @@ Olivia[O]
         ...
     }
     @P:s {
-        You're...? I'm not sure I...
+        You are...? I'm not sure I...
     }
-    @MC:s {
+    @MC:n {
         I'm falling for...
         <[2.1] Drake.>
         <[2.2*] Hana.>
@@ -35,18 +35,18 @@ Olivia[O]
 
     % if 2.1 %
         @P:s {
-            I see.
+            ...I see.
         }
         @MC:s {
             $P, I'm so sorry. I should have told you earlier, before all of this.
         }
-        @P:s {
+        @P:n {
             $MC... I want you to know, I still mean everything I said.
         }
         @ {
             You look down at your hands. A long silence settles between the two of you.
         }
-        @P:s {
+        @P:n {
             I'm sorry, I need a moment alone.
         }
         @ {

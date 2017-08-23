@@ -16,7 +16,6 @@ class ScriptReader {
         this._processLogic = this._processLogic.bind(this);
         this._processLine = this._processLine.bind(this);
         this.replaceNames = this.replaceNames.bind(this);
-        this.replaceItalics = this.replaceItalics.bind(this);
         this.nextScreen = this.nextScreen.bind(this);
     }
 
@@ -156,16 +155,10 @@ class ScriptReader {
         }
     }
 
-    replaceItalics(result) {
-        var re = /_([^_]+)_/; // _threw it away_
-        var found = result.text.match(re);
-        while (found) {
-            result.text = result.text.replace(found[0], '<em>' + found[1] + '</em>');
-            found = result.text.match(re);
-        }
-    }
-
     nextScreen() {
+        if (this.lineIndex > this.scriptLines.length) {
+            return null;
+        }
         var result = {
             type: '',
             name: '',
@@ -175,7 +168,6 @@ class ScriptReader {
         }
         this._processLine(result);
         this.replaceNames(result);
-        this.replaceItalics(result);
         console.log('NEXT SCREEN: ', result);
         return result;
     }
