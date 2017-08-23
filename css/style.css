@@ -12,6 +12,7 @@ body {
 
 .alert {
     color: red;
+    line-height: 0px;
 }
 
 #box {
@@ -77,6 +78,11 @@ section {
 .profile {
     width: 80px;
     height: 80px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
 
     border: 1px solid white;
     background-image: radial-gradient(circle at center, #7AC3CC, #3083A3);

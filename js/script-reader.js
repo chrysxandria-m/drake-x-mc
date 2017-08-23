@@ -16,6 +16,7 @@ class ScriptReader {
         this._processLogic = this._processLogic.bind(this);
         this._processLine = this._processLine.bind(this);
         this.replaceNames = this.replaceNames.bind(this);
+        this.replaceItalics = this.replaceItalics.bind(this);
         this.nextScreen = this.nextScreen.bind(this);
     }
 
@@ -78,9 +79,6 @@ class ScriptReader {
             // set text
             while (true) {
                 var nextStr = this.scriptLines[this.lineIndex];
-
-                console.log(nextStr); // DEBUG
-
                 if (nextStr.length === 0 || nextStr.includes('#')) { // blank or comment (#)
                     this.lineIndex++; // skip line
                 } else if (nextStr.includes('}')) { // finished dialogue
@@ -114,12 +112,9 @@ class ScriptReader {
             } else {
                 // skip the if statement
 
-                console.log(found[1]) // DEBUG
+                console.log('Skipping: ' + found[1])
 
                 while (!this.scriptLines[this.lineIndex].includes('% end if ' + found[1] + ' %')) {
-
-                    console.log(this.scriptLines[this.lineIndex]) // DEBUG
-
                     this.lineIndex++; // skip internal lines
                 }
             }
@@ -137,7 +132,7 @@ class ScriptReader {
         while (true) {
             var str = this.scriptLines[this.lineIndex];
 
-            console.log(str); // DEBUG
+            console.log('   Processing: ' + str);
 
             if (str.length === 0 || str.includes('#')) { // blank or comment (#)
                 this.lineIndex++; // skip line
@@ -153,7 +148,21 @@ class ScriptReader {
     }
 
     replaceNames(result) {
-        //TODO
+        var re = /\$([A-Z]+)/; // % $MC
+        var found = result.text.match(re);
+        while (found) {
+            result.text = result.text.replace(found[0], this.characters[found[1]]);
+            found = result.text.match(re);
+        }
+    }
+
+    replaceItalics(result) {
+        var re = /_([^_]+)_/; // _threw it away_
+        var found = result.text.match(re);
+        while (found) {
+            result.text = result.text.replace(found[0], '<em>' + found[1] + '</em>');
+            found = result.text.match(re);
+        }
     }
 
     nextScreen() {
@@ -166,6 +175,7 @@ class ScriptReader {
         }
         this._processLine(result);
         this.replaceNames(result);
+        this.replaceItalics(result);
         console.log('NEXT SCREEN: ', result);
         return result;
     }

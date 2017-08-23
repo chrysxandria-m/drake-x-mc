@@ -335,7 +335,7 @@ Olivia[O]
             }
         % end if 4.1 %
 
-        % if 4.2  %
+        % if 4.2 %
             # TODO
         % end if 4.2 %
 

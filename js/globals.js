@@ -7,6 +7,14 @@ var g = {
         o: ['FEBD60', 'CD6F2E'], // :O
     },
 
+    smileys: {
+        h: ':D',
+        s: ':(',
+        a: '>:(',
+        n: '',
+        o: ':O'
+    },
+
     types: {
         mc: 'mc-box',
         choice: 'choice-box',
@@ -18,5 +26,6 @@ var g = {
     // TODO test on safari + firefox + safari mobile + chrome mobile
     // TODO investigate polyfill
 
+    // longer-term TODO add animations
     // longer-term TODO incorporate images
 }

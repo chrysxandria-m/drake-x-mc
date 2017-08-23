@@ -3,6 +3,11 @@ class GameScreen {
         this.containerElement = containerElement;
         this.finishGame = finishGame;
 
+        // bind
+        this.show = this.show.bind(this);
+        this.hide = this.hide.bind(this);
+        this.showNextScreen = this.showNextScreen.bind(this);
+
         // set up ScriptReader
         this.scriptReader = new ScriptReader();
     }
@@ -16,5 +21,9 @@ class GameScreen {
 
     hide() {
         this.containerElement.classList.add('inactive');
+    }
+
+    showNextScreen() {
+
     }
 }
