@@ -62,9 +62,11 @@ class App {
         }
 
         // hide intro screen, show loading screen
-        const introElem = document.querySelector('#questions');
+        const headerElem = document.querySelector('header');
+        const questionElem = document.querySelector('#questions');
         const loadingElem = document.querySelector('#loading');
-        introElem.classList.add('inactive');
+        headerElem.classList.add('hide-on-mobile');
+        questionElem.classList.add('inactive');
         loadingElem.classList.remove('inactive');
 
         let promisesArr = [];

@@ -24,9 +24,9 @@ class GameScreen {
     }
 
     doSelectChoice(e) {
-        console.log('yo 1')
-        event.stopPropagation();
-
+        if (e) {
+            e.stopPropagation();
+        }
         let dataID = e.currentTarget.dataset.id;
         this.scriptReader.selectChoice(dataID);
         this.displayNextScreen();
@@ -57,8 +57,10 @@ class GameScreen {
         }
     }
 
-    displayNextScreen() {
-        event.stopPropagation();
+    displayNextScreen(e) {
+        if (e) {
+            e.stopPropagation();
+        }
 
         let result = this.scriptReader.nextScreen();
         // endgame
@@ -68,16 +70,11 @@ class GameScreen {
         }
         this.setScreenActive(result.type);
 
-        console.log('yo 2')
-
         // make <article> clickable only if necessary
         const articleElem = document.querySelector('article');
         articleElem.removeEventListener('click', this.displayNextScreen);
         articleElem.classList.remove('can-click');
         if (result.type !== 'choice') {
-
-            console.log('yo 3')
-
             articleElem.addEventListener('click', this.displayNextScreen);
             articleElem.classList.add('can-click');
         }

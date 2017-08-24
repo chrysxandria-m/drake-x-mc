@@ -12,7 +12,10 @@ body {
 
 .alert {
     color: red;
-    line-height: 0px;
+}
+
+.hide-on-mobile {
+    /* no change normally */
 }
 
 #box {
@@ -32,7 +35,8 @@ textarea {
 header {
     padding: 15px;
     border: 2px solid black;
-    margin: 10px;
+    box-sizing: border-box;
+    margin: 10px 0px;
     width: 700px;
 }
 
@@ -59,6 +63,7 @@ form {
     flex-grow: 1;
 
     border: 2px dashed gray;
+    box-sizing: border-box;
     width: 350px;
 
     display: flex;
@@ -77,7 +82,7 @@ article {
     flex-grow: 1;
 
     border: 2px dashed gray;
-    margin: 10px;
+    box-sizing: border-box;
     padding: 10px;
     width: 350px;
 
@@ -85,7 +90,7 @@ article {
 }
 
 section {
-    padding: 32px;
+    padding: 28px;
 
     color: #6B7B92;
     font-family: 'Open Sans', sans-serif;
@@ -93,8 +98,8 @@ section {
 }
 
 .profile {
-    width: 170px;
-    height: 170px;
+    width: 160px;
+    height: 160px;
 
     display: flex;
     justify-content: center;
@@ -122,7 +127,7 @@ section {
 }
 
 .text {
-    padding: 10px 20px;
+    padding: 8px 20px;
     line-height: 1.6em;
 
     background-color: white;
@@ -167,6 +172,7 @@ section {
 footer {
     padding: 15px;
     border: 2px solid black;
+    box-sizing: border-box;
     width: 700px;
 }
 
@@ -177,4 +183,35 @@ footer div {
 footer h2, footer p {
     line-height: 0.5em;
     display: inline;
+}
+
+/* mobile */
+
+@media (max-width:700px) {
+
+    header, footer {
+        width: 100%;
+    }
+    .hide-on-mobile {
+        display: none !important;
+    }
+    html, body, #box {
+        height: 100%;
+    }
+}
+
+@media (max-width:350px) {
+    article, #loading {
+        width: 100%;
+    }
+}
+
+@media (max-width:300px) {
+    section {
+        padding: 12px;
+    }
+    .profile {
+        width: 140px;
+        height: 140px;
+    }
 }
