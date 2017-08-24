@@ -54,7 +54,8 @@ class ScriptReader {
     setScript(scriptFile, names) {
         this.names = names;
         console.log('TODO: fix this hardcoded value')
-        fetch('https://chrysxandria-m.github.io/drake-x-mc/writing/ending.txt').then(this._onReadSuccess, this._onReadError);
+        // fetch returns a promise: let promise1 = fetch(...);
+        return fetch('https://chrysxandria-m.github.io/drake-x-mc/writing/ending.txt').then(this._onReadSuccess, this._onReadError);
     }
 
     printError(message, line) {

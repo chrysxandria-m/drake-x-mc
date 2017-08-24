@@ -54,6 +54,23 @@ form {
     margin: 8px 0px;
 }
 
+/* loading */
+#loading {
+    flex-grow: 1;
+
+    border: 2px dashed gray;
+    width: 350px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #313F4C;
+    font-family: 'Boogaloo', 'Open Sans', sans-serif;
+    font-size: 18px;
+
+}
+
 /* article */
 
 article {
