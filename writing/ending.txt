@@ -215,7 +215,7 @@ Olivia[O]
         @O:n {
             You can't leave $P in Madeleine's clutches.
         }
-        @M:n {
+        @MC:n {
             Actually, Olivia... I told $P that I want to be with someone else.
         }
         @O:o {

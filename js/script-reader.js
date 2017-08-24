@@ -71,6 +71,7 @@ class ScriptReader {
             } else {
                 result.type = (found[1] === 'MC') ? 'mc' : 'other';
                 result.name = this.characters[found[1]];
+                result.shortName = found[1];
                 result.emotion = found[2] ? found[2] : 'n';
             }
             this.lineIndex++;
@@ -132,8 +133,9 @@ class ScriptReader {
             var str = this.scriptLines[this.lineIndex];
 
             console.log('   Processing: ' + str);
-
-            if (str.length === 0 || str.includes('#')) { // blank or comment (#)
+            if (this.lineIndex >= this.scriptLines.length) {
+                return;
+            } else if (str.length === 0 || str.includes('#')) { // blank or comment (#)
                 this.lineIndex++; // skip line
             } else if (str.includes('%')) { // logic (%)
                 this._processLogic(result, str);
@@ -156,17 +158,18 @@ class ScriptReader {
     }
 
     nextScreen() {
-        if (this.lineIndex > this.scriptLines.length) {
-            return null;
-        }
         var result = {
             type: '',
             name: '',
+            shortName: '',
             emotion: '',
             text: '',
             choices: {},
         }
         this._processLine(result);
+        if (this.lineIndex >= this.scriptLines.length) {
+            return null;
+        }
         this.replaceNames(result);
         console.log('NEXT SCREEN: ', result);
         return result;

@@ -3,7 +3,7 @@ body {
     margin: 0;
 
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .inactive {
@@ -72,20 +72,22 @@ section {
 
     color: #6B7B92;
     font-family: 'Open Sans', sans-serif;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .profile {
-    width: 80px;
-    height: 80px;
+    width: 170px;
+    height: 170px;
 
     display: flex;
     justify-content: center;
     align-items: center;
     color: white;
+    font-size: 36px;
 
     border: 1px solid white;
     background-image: radial-gradient(circle at center, #7AC3CC, #3083A3);
+    background-size: contain;
     border-radius: 8px;
 }
 

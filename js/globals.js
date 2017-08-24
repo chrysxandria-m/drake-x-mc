@@ -11,7 +11,7 @@ var g = {
         h: ':D',
         s: ':(',
         a: '>:(',
-        n: '',
+        n: ':|',
         o: ':O'
     },
 
@@ -23,9 +23,9 @@ var g = {
     },
 
     // TODO make it mobile-friendly
+    // TOOD preload images
     // TODO test on safari + firefox + safari mobile + chrome mobile
     // TODO investigate polyfill
 
     // longer-term TODO add animations
-    // longer-term TODO incorporate images
 }

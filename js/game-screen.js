@@ -49,22 +49,36 @@ class GameScreen {
 
     displayNextScreen() {
         var result = this.scriptReader.nextScreen();
+        // endgame
+        if (!result) {
+            this.finishGame();
+            return;
+        }
         this.setScreenActive(result.type);
         const elem = document.querySelector('#' + g.types[result.type]);
         if (result.type === 'narrator') {
             const textElem = elem.querySelector('.text');
             this.updateTextContent(textElem, result.text);
         } else { // mc, choice, or other
-            const profileElem = elem.querySelector('.profile');
-            profileElem.textContent = g.smileys[result.emotion];
-            profileElem.style.backgroundImage = 'radial-gradient(circle at center, #' +
-                g.emotions[result.emotion][0] + ', #' + g.emotions[result.emotion][1] + ')';
-
+            // set name and text
             const nameElem = elem.querySelector('.name');
             const textElem = elem.querySelector('.text');
-            nameElem.textContent = result.name;
+            nameElem.textContent = result.name.toUpperCase();
             this.updateTextContent(textElem, result.text);
 
+            // set profile image
+            const profileElem = elem.querySelector('.profile');
+            if (result.type === 'other') {
+                profileElem.textContent = '';
+                var profileKey = result.shortName + '-' + result.emotion + '.jpg';
+                profileElem.style.backgroundImage = 'url(img/' + profileKey + ')';
+            } else {
+                profileElem.textContent = g.smileys[result.emotion];
+                profileElem.style.backgroundImage = 'radial-gradient(circle at center, #' +
+                g.emotions[result.emotion][0] + ', #' + g.emotions[result.emotion][1] + ')';
+            }
+
+            // set choices
             if (result.type === 'choice') {
                 const choicesElem = elem.querySelector('.choices');
                 choicesElem.innerHTML = ''
