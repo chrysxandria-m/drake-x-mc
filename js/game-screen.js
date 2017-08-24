@@ -113,12 +113,15 @@ class GameScreen {
 
                 for (let choiceKey in result.choices) {
                     const newElem = document.createElement('div');
-                    newElem.dataset.id = choiceKey;
                     this.updateTextContent(newElem, result.choices[choiceKey]);
 
-                    if (choiceKey.includes('*')) { // unavailable choice
+                    if (choiceKey.indexOf('*') !== -1) { // unavailable choice
+                        let hoverText = choiceKey.slice(choiceKey.indexOf('*') + 1);
+                        newElem.setAttribute("data-balloon", hoverText);
+                        newElem.setAttribute("data-balloon-pos", 'up');
                         newElem.classList.add('invalid-choice')
                     } else { // regular choice
+                        newElem.dataset.id = choiceKey;
                         newElem.classList.add('valid-choice')
                         newElem.addEventListener('click', this.doSelectChoice);
                     }

@@ -15,8 +15,8 @@ Olivia[O]
 }
 @MC:n {
     $P...
-    <[1.1*] I love you too.>
-    <[1.2*] I'm not sure about this.>
+    <[1.1*These choices are in the actual trr finale!] I love you too.>
+    <[1.2*These choices are in the actual trr finale!] I'm not sure about this.>
     <[1.3] I'm so sorry... I'm falling for someone else.>
 }
 
@@ -30,7 +30,7 @@ Olivia[O]
     @MC:n {
         I'm falling for...
         <[2.1] Drake.>
-        <[2.2*] Hana.>
+        <[2.2*Lmk if you'd like to write this :)] Hana.>
     }
 
     % if 2.1 %
