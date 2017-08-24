@@ -85,7 +85,7 @@ article {
 }
 
 section {
-    margin: 32px;
+    padding: 32px;
 
     color: #6B7B92;
     font-family: 'Open Sans', sans-serif;
@@ -135,8 +135,20 @@ section {
     margin: 8px 0px;
 
     border: 3px solid #6B7B92;
-    background-color: white;
     border-radius: 20px;
+}
+
+.valid-choice {
+    background-color: white;
+    cursor: pointer;
+}
+
+.invalid-choice {
+    background-color: #BFC6D0;
+}
+
+.can-click {
+    cursor: pointer;
 }
 
 #non-mc-box .right-align {

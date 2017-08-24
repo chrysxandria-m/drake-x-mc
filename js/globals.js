@@ -55,7 +55,6 @@ let g = {
     ],
 
     // TODO make it mobile-friendly
-    // TOOD preload images
     // TODO test on safari + firefox + safari mobile + chrome mobile
     // TODO investigate polyfill
 

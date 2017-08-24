@@ -12,18 +12,17 @@ class App {
 
         // bind
         this._loadImage = this._loadImage.bind(this);
-        this.startGame = this.startGame.bind(this);
+        this.initGame = this.initGame.bind(this);
+        this._startGame = this._startGame.bind(this);
         this.finishGame = this.finishGame.bind(this);
 
         // set up views
         const gameElem = document.querySelector('article');
         this.gameScreen = new GameScreen(gameElem, this.finishGame);
+        this.gameScreen.hide();
 
         const feedbackElem = document.querySelector('footer');
         this.feedbackScreen = new FeedbackScreen(feedbackElem);
-
-        // set up interactions
-        this.gameScreen.hide();
         this.feedbackScreen.hide();
     }
 
@@ -39,7 +38,15 @@ class App {
         });
     }
 
-    startGame() {
+    _startGame() {
+        // hide loading screen, show game screen
+        const loadingElem = document.querySelector('#loading');
+        loadingElem.classList.add('inactive');
+        this.gameScreen.show();
+        this.gameScreen.displayNextScreen();
+    }
+
+    initGame() {
         // update player-defined names
         const mcFirstName = document.querySelector('#mc-first-name').value;
         const mcLastName = document.querySelector('#mc-last-name').value;
@@ -64,7 +71,6 @@ class App {
 
         // update script
         const scriptFile = document.querySelector('#script-file').value;
-        this.gameScreen.scriptReader.setScript(scriptFile, this.names);
         // setScript returns a promise
         let scriptPromise = this.gameScreen.scriptReader.setScript(scriptFile, this.names);
         promisesArr.push(scriptPromise);
@@ -76,13 +82,7 @@ class App {
         }
 
         // when ready, hide loading screen, show game screen
-        Promise.all(promisesArr).then(
-            (value) => { // on success
-                const loadingElem = document.querySelector('#loading');
-                loadingElem.classList.add('inactive');
-
-                this.gameScreen.show();
-            },
+        Promise.all(promisesArr).then(this._startGame,
             (error) => { // on error
                 console.error('Error: Something went wrong loading script/images. ' + error);
             });

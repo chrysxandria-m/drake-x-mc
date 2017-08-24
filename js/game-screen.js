@@ -6,6 +6,7 @@ class GameScreen {
         // bind
         this.show = this.show.bind(this);
         this.hide = this.hide.bind(this);
+        this.doSelectChoice = this.doSelectChoice.bind(this);
         this.setScreenActive = this.setScreenActive.bind(this);
         this.updateTextContent = this.updateTextContent.bind(this);
         this.displayNextScreen = this.displayNextScreen.bind(this);
@@ -20,6 +21,15 @@ class GameScreen {
 
     hide() {
         this.containerElement.classList.add('inactive');
+    }
+
+    doSelectChoice(e) {
+        console.log('yo 1')
+        event.stopPropagation();
+
+        let dataID = e.currentTarget.dataset.id;
+        this.scriptReader.selectChoice(dataID);
+        this.displayNextScreen();
     }
 
     setScreenActive(type) {
@@ -48,6 +58,8 @@ class GameScreen {
     }
 
     displayNextScreen() {
+        event.stopPropagation();
+
         let result = this.scriptReader.nextScreen();
         // endgame
         if (!result) {
@@ -55,6 +67,21 @@ class GameScreen {
             return;
         }
         this.setScreenActive(result.type);
+
+        console.log('yo 2')
+
+        // make <article> clickable only if necessary
+        const articleElem = document.querySelector('article');
+        articleElem.removeEventListener('click', this.displayNextScreen);
+        articleElem.classList.remove('can-click');
+        if (result.type !== 'choice') {
+
+            console.log('yo 3')
+
+            articleElem.addEventListener('click', this.displayNextScreen);
+            articleElem.classList.add('can-click');
+        }
+
         const elem = document.querySelector('#' + g.types[result.type]);
         if (result.type === 'narrator') {
             const textElem = elem.querySelector('.text');
@@ -80,12 +107,21 @@ class GameScreen {
 
             // set choices
             if (result.type === 'choice') {
+                // clear existing choices
                 const choicesElem = elem.querySelector('.choices');
                 choicesElem.innerHTML = ''
+
                 for (let choiceKey in result.choices) {
                     const newElem = document.createElement('div');
                     newElem.dataset.id = choiceKey;
                     this.updateTextContent(newElem, result.choices[choiceKey]);
+
+                    if (choiceKey.includes('*')) { // unavailable choice
+                        newElem.classList.add('invalid-choice')
+                    } else { // regular choice
+                        newElem.classList.add('valid-choice')
+                        newElem.addEventListener('click', this.doSelectChoice);
+                    }
                     choicesElem.appendChild(newElem);
                 }
             }
