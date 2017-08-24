@@ -20,16 +20,16 @@ class ScriptReader {
     }
 
     _onReadProcessed(text) {
-        var scriptRaw = text;
+        let scriptRaw = text;
         this.scriptLines = text.split('\n');
 
         // process characters
         if (this.scriptLines[this.lineIndex].includes('% characters %')) {
             this.lineIndex++; // skip '% characters %'
             while (!this.scriptLines[this.lineIndex].includes('% end characters %')) {
-                var str = this.scriptLines[this.lineIndex];
-                var re = /([A-Za-z]+)\[([A-Z]+)\]/; // Drake[D]
-                var found = str.match(re);
+                let str = this.scriptLines[this.lineIndex];
+                let re = /([A-Za-z]+)\[([A-Z]+)\]/; // Drake[D]
+                let found = str.match(re);
                 if (found) {
                     this.characters[found[2]] = found[1];
                 }
@@ -62,8 +62,8 @@ class ScriptReader {
     }
 
     _processDialogue(result, str) {
-        var re = /@([A-Z]*):*([hsano]*) \{/; // @MC:n {
-        var found = str.match(re);
+        let re = /@([A-Z]*):*([hsano]*) \{/; // @MC:n {
+        let found = str.match(re);
         if (found) {
             // set type, name, and emotion
             if (found[1] === '') {
@@ -78,15 +78,15 @@ class ScriptReader {
 
             // set text
             while (true) {
-                var nextStr = this.scriptLines[this.lineIndex];
+                let nextStr = this.scriptLines[this.lineIndex];
                 if (nextStr.length === 0 || nextStr.includes('#')) { // blank or comment (#)
                     this.lineIndex++; // skip line
                 } else if (nextStr.includes('}')) { // finished dialogue
                     this.lineIndex++;
                     break;
                 } else if (nextStr.includes('<')) {
-                    var nextRe = /<\[(.+)\] (.+)>/; // <[2.1] Drake.>
-                    var nextFound = nextStr.match(nextRe);
+                    let nextRe = /<\[(.+)\] (.+)>/; // <[2.1] Drake.>
+                    let nextFound = nextStr.match(nextRe);
                     if (nextFound) {
                         result.type = 'choice';
                         result.choices[nextFound[1]] = nextFound[2];
@@ -103,8 +103,8 @@ class ScriptReader {
     }
 
     _processLogic(result, str) {
-        var re = /% if (.+) %/; // % if 2.1 %
-        var found = str.match(re);
+        let re = /% if (.+) %/; // % if 2.1 %
+        let found = str.match(re);
         if (found) {
             if (this.choices.includes(found[1])) {
                 // enter into the if statement
@@ -130,7 +130,7 @@ class ScriptReader {
 
     _processLine(result) {
         while (true) {
-            var str = this.scriptLines[this.lineIndex];
+            let str = this.scriptLines[this.lineIndex];
 
             console.log('   Processing: ' + str);
             if (this.lineIndex >= this.scriptLines.length) {
@@ -149,8 +149,8 @@ class ScriptReader {
     }
 
     replaceNames(result) {
-        var re = /\$([A-Z]+)/; // % $MC
-        var found = result.text.match(re);
+        let re = /\$([A-Z]+)/; // % $MC
+        let found = result.text.match(re);
         while (found) {
             result.text = result.text.replace(found[0], this.characters[found[1]]);
             found = result.text.match(re);
@@ -158,7 +158,7 @@ class ScriptReader {
     }
 
     nextScreen() {
-        var result = {
+        let result = {
             type: '',
             name: '',
             shortName: '',

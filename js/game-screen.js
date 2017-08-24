@@ -23,7 +23,7 @@ class GameScreen {
     }
 
     setScreenActive(type) {
-        for (var key in g.types) {
+        for (let key in g.types) {
             const elem = document.querySelector('#' + g.types[key]);
             if (type === key) {
                 elem.classList.remove('inactive');
@@ -34,8 +34,8 @@ class GameScreen {
     }
 
     updateTextContent(elem, text) {
-        var re = /_([^_]+)_/; // _threw it away_
-        var found = text.match(re);
+        let re = /_([^_]+)_/; // _threw it away_
+        let found = text.match(re);
         if (found) {
             while (found) {
                 text = text.replace(found[0], '<em>' + found[1] + '</em>');
@@ -48,7 +48,7 @@ class GameScreen {
     }
 
     displayNextScreen() {
-        var result = this.scriptReader.nextScreen();
+        let result = this.scriptReader.nextScreen();
         // endgame
         if (!result) {
             this.finishGame();
@@ -70,7 +70,7 @@ class GameScreen {
             const profileElem = elem.querySelector('.profile');
             if (result.type === 'other') {
                 profileElem.textContent = '';
-                var profileKey = result.shortName + '-' + result.emotion + '.jpg';
+                let profileKey = result.shortName + '-' + result.emotion + '.jpg';
                 profileElem.style.backgroundImage = 'url(img/' + profileKey + ')';
             } else {
                 profileElem.textContent = g.smileys[result.emotion];
@@ -82,7 +82,7 @@ class GameScreen {
             if (result.type === 'choice') {
                 const choicesElem = elem.querySelector('.choices');
                 choicesElem.innerHTML = ''
-                for (var choiceKey in result.choices) {
+                for (let choiceKey in result.choices) {
                     const newElem = document.createElement('div');
                     newElem.dataset.id = choiceKey;
                     this.updateTextContent(newElem, result.choices[choiceKey]);
