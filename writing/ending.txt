@@ -10,6 +10,19 @@ Olivia[O]
 % end characters %
 
 # start scene with Prince
+@ {
+    It's the evening of the Coronation Ball, and you're alone with Prince $P at the entrance of the hedge maze.
+}
+@P:h {
+    $MC $LN, you're incredible in every sense of the word.
+}
+@P:n {
+    And I don't want to spend another minute without you knowing exactly how I feel.
+}
+@P:n {
+    I've never said this to anyone before, but I know it's more true than my own name. Which is all to
+    say...
+}
 @P:h {
     $MC... I love you.
 }
@@ -40,25 +53,50 @@ Olivia[O]
         @MC:s {
             $P, I'm so sorry. I should have told you earlier, before all of this.
         }
-        @P:n {
-            $MC... I want you to know, I still mean everything I said.
-        }
         @ {
-            You look down at your hands. A long silence settles between the two of you.
+            Prince $P tries to muster a smile, but it comes out looking pained.
         }
         @P:n {
-            I'm sorry, I need a moment alone.
+            That's... okay. You're the best thing to ever step into this palace, and anyone would be lucky to have you.
+        }
+        @P:n {
+            So... I'm glad... that it's Drake.
+        }
+        @MC:n {
+             ...
+        }
+        @MC:s {
+             I'm really sorry for hurting you.
         }
         @ {
-            $P does his best to give you a brave smile, but you see the pain in his eyes before he walks away.
+            Prince $P's brows furrow slightly, and his eyes linger on you for a long moment.
         }
+        @P:s {
+            $MC... I want you to know... I still mean everything I said.
+        }
+        @MC:s {
+             ...
+        }
+        @ {
+            A heavy silence fills the space between the two of you. You look down at your hands.
+        }
+        @ {
+            Finally, Prince $P speaks.
+        }
+        @P:s {
+             ...If it's okay with you, I think I need a minute alone.
+        }
+        @ {
+            Prince $P bows, then hurries away.
+        }
+
 
         # start scene with Bertrand and Maxwell
         @ {
-            You're standing alone by the maze entrance when Bertrand, and Maxwell come out into the palace grounds.
+            You're standing alone by the maze entrance when Bertrand and Maxwell come out into the palace grounds.
         }
         @B:n {
-            $MC. There you are. It is rather critical that you are prepared for--
+            $MC. There you are. As you know, it is very critical that you are prepared for--
         }
         @M:n {
             Wait, where's $P?
@@ -79,13 +117,16 @@ Olivia[O]
             Bertrand--
         }
         @B:a {
-            Don't utter a word, Maxwell. You were the one who brought her here.
+            Don't you utter a word, Maxwell. You were the one who brought her here.
         }
         @M:s {
             I know.
         }
         @B:s {
-            House Beaumont is completely, utterly ruined. Ruined! Did we matter at all to you, $MC?
+            House Beaumont is completely, utterly ruined. Ruined!
+        }
+        @B:s {
+            Tell me, did we matter at all to you, $MC?
         }
         @MC {
             Bertrand,
@@ -95,7 +136,10 @@ Olivia[O]
 
         % if 3.1 %
             @B:n {
-                Clearly not.
+                Well, I don't believe you.
+            }
+            @B:n {
+                If you truly cared, you wouldn't have done this.
             }
             @ {
                 Bertrand turns sharply, wringing his hands. He almost stumbles into a table as he hurries away.
@@ -106,14 +150,23 @@ Olivia[O]
             @MC:n {
                 Maxwell, I'm so sorry--
             }
-            @M:s {
+            @M:n {
                 I was so close to finally doing something right...
             }
-            @M:n {
+            @M:s {
                 But I failed again.
             }
             @MC:n {
                 This isn't your fault.
+            }
+            @M:n {
+                Hey, $MC... Like I said before, as far as I'm concerned, you're still part of House Beaumont.
+            }
+            @MC:h {
+                Thanks, Maxwell.
+            }
+            @M:n {
+                But at the same time, something else I've said before...
             }
             @M:s {
                 $MC, you know you were $P's one shot at being really happy, right?
@@ -122,45 +175,57 @@ Olivia[O]
                 I know.
             }
             @M:n {
-                I mean, your happiness matters too...
+                I mean, your happiness matters too.
             }
             @M:s {
-                It's just, so many things--so many people--are screwed over now.
+                It's just, so many things--so many people--are screwed now.
             }
-            @M:n {
-                I need to go find $P.
+            @MC:n {
+                Even if I'm not queen, there must be some way I can help...?
             }
             @ {
-                Maxwell shakes his head sadly and walks away.
+                Maxwell shakes his head sadly and turns away.
+            }
+            @M:n {
+                Sorry, $MC.
+            }
+            @ {
+                Maxwell disappears into the crowd.
             }
         % end if 3.1 %
 
         % if 3.2 %
             @B:n {
-                Hmph. Serves me right to trust people.
+                Hmph. Guess you're honest about _something._
+            }
+            @B:n {
+                And to think, at one point I even allowed myself to believe we--I mean, _you_--had a chance.
             }
             @ {
                 Bertrand turns sharply, wringing his hands. He almost stumbles into a table as he hurries away.
             }
             @ {
-                You turn to Maxwell. His shoulders are slumped, and hurt is written all over his eyes.
+                You turn to Maxwell. His fists are clenched, and hurt is written all over his eyes.
             }
             @M:s {
-                So we didn't matter to you, huh? $P didn't matter to you either.
+                So we didn't matter to you, huh?
             }
             @MC:n {
                 Maxwell, I--
             }
             @M:a {
-                I thought you were different from all the others. I really thought you were!
+                We didn't matter to you at all. And $P didn't matter to you either.
             }
-            @MC:n {
-                I _am_ different.
+            @M:a {
+                I thought of you as a Beaumont. I thought of you as _friend_. Bertrand thought I was stupid.
             }
-            @M:s {
-                Not in the ways that count. $MC, I don't think you'll ever know just how many lives you destroyed today. Even Drake's.
+            @M:a {
+                And it turns out he was right.
             }
-            @M:n {
+            @MC:s {
+                ...
+            }
+            @M:a {
                 You're a terrible person, $MC.
             }
             @ {
@@ -171,7 +236,7 @@ Olivia[O]
 
         # start scene with Hana
         @ {
-            Heart pounding, you head into the castle to find Drake, and almost ram into Hana at the door.
+            Taking a deep breath, you head into the palace to find Drake. Hana catches you at the door.
         }
         @H:n {
             $MC! What's wrong?
@@ -186,34 +251,76 @@ Olivia[O]
             Hana hugs you.
         }
         @H:n {
-            I actually know exactly how you're feeling right now...
+            Well, I actually know exactly how you're feeling right now...
         }
         @MC:n {
             Haha. You really do, don't you?
         }
+        @ {
+            Hana smiles at you.
+        }
         @H:n {
-            So... where's Drake?
+            Also, I must say I saw this coming.
         }
         @MC:n {
-            I haven't seen him around, but I'm about to go find him.
-        }
-        @ {
-            You both scan the room for Drake, but he is nowhere to be found. Instead, you see Olivia speaking to the Queen. She curtsies, then strides out of the palace. She looks like she's on the verge of tears.
+             Oh... really?
         }
         @H:n {
-            You should go look for him. I'll keep an eye out as well!
+            Part of my training involved learning to read body language in order to distinguish between allies, enemies, and lovers.
+        }
+        @MC:o {
+             Really?
+        }
+        @H:h {
+            Hehe, I'm just teasing. My studies only included allies and enemies.
+        }
+        @H:n {
+            But Drake does smile a lot around you... and you always jump at the chance to spend time with him.
+        }
+        @MC:n {
+             Hmm... you're very observant. What else have you noticed?
+        }
+        @H:n {
+            Let's see... I've noticed that you enjoy saving people from themselves.
         }
         @ {
-            You decide to follow Olivia...
+             You feel a blush creeping into your cheeks.
+        }
+        @H:n {
+            Anyway, enough observation for now. Where's Drake?
+        }
+        @MC:n {
+             Oh, I was just looking for him. I haven't told him yet.
+        }
+        @H:o {
+            You haven't told him yet?
+        }
+        @H:n {
+            You should go find him right now. I'll help you look.
+        }
+        @ {
+            Hana rushes off into the crowd.
         }
 
 
         # start scene with Olivia
         @ {
-            ...Later, after Olivia explains her situation...
+            You scan the room for Drake, but he is nowhere to be found. Instead, you see Olivia speaking to the Queen. She curtsies, then turns and runs to the doors, tears streaming down her face.
+        }
+        @ {
+            (You decide to follow Olivia out of the palace...)
+        }
+        @ {
+            (...The two of you discuss her situation and reach an understanding.)
         }
         @O:n {
-            You can't leave $P in Madeleine's clutches.
+            In any case, you've got to do this now for the both of us.
+        }
+        @O:a {
+            If there's one thing I know, it's that you can't leave $P in Madeleine's clutches.
+        }
+        @MC:n {
+            ...
         }
         @MC:n {
             Actually, Olivia... I told $P that I want to be with someone else.
@@ -224,11 +331,17 @@ Olivia[O]
         @MC:n {
             So I'm out of the running.
         }
-        @O:n {
-            How... ironic. I wished for that during this entire social season...
+        @O:s {
+            How... ironic.
         }
-        @O:n {
-            But now... I cannot believe you at all.
+        @O:s {
+            I wished for this during the entire social season, but now that it's happened, all I can think is...
+        }
+        @O:a {
+            What is _wrong_ with you?
+        }
+        @MC:n {
+            Uh...
         }
         @O:a {
             He _loved_ you, you know that right? You had the only thing I ever wanted, and you just _threw it away._
@@ -236,12 +349,16 @@ Olivia[O]
         @MC:n {
             You're not the first to tell me.
         }
-        @O:s {
-            I will _never_ forgive you for hurting $P.
+        @ {
+            Olivia puts her hands on her hips and stares you down.
+        }
+        @O:a {
+            I don't think I'll _ever_ forgive you for what you've done to $P.
         }
         @ {
-            Olivia turns on her heel and stalks away.
+            She climbs into the waiting Rolls-Royce, slamming the door behind her.
         }
+
 
         # start scene with Drake
         @ {
@@ -300,13 +417,13 @@ Olivia[O]
             @MC:n {
                 I've been unattainable for so long.
             }
-            @D:n {
+            @D:s {
                 No, that's not it!
             }
             @ {
                 Drake's brows are furrowed, and he runs his hands through his hair in frustration.
             }
-            @D:n {
+            @D:s {
                 You're so important to me, $LN. Gah, it's so like me to screw this up.
             }
             @D:n {
@@ -349,7 +466,7 @@ Olivia[O]
             @D:n {
                 I can't give you what $P can.
             }
-            @MC:n {
+            @MC:a {
                 Everyone else has a point, huh? I guess I just made the biggest mistake of my life then.
             }
             @D:n {
@@ -362,10 +479,10 @@ Olivia[O]
                 --but you, and $P... hell, what if I just ruined your lives?
             }
             @MC:a {
-                ...oh, and then, when I finally tell $P that I want you, everyone, even Olivia, even you, yells at me for ruining $P's life.
+                ...oh, and _then_, when I finally tell $P that I want you, everyone, even Olivia, even you, yells at me for ruining $P's life.
             }
             @D:n {
-                That's not what I said.
+                That's... not what I said.
             }
             @MC:s {
                 I'm so over all of this.
@@ -377,7 +494,7 @@ Olivia[O]
                 Are _you_ even listening to what I'm saying?
             }
             @ {
-                Drake is about to say something, but he stops himself. He closes his eyes and rubs his temples.
+                Drake is about to say something, but he stops himself.
             }
             @D:n {
                 Fair point.
@@ -385,19 +502,28 @@ Olivia[O]
             @MC:s {
                 I just thought we both wanted this.
             }
-            @D:n {
+            @D:s {
                 I do want this, $LN. More than anything. I should never have let you doubt that.
+            }
+            @ {
+                Drake closes his eyes and rubs his temples.
             }
             @D:s {
                 I'm sorry, $LN, I did this all wrong. I should've held you the moment I saw you. Can we try again?
             }
             @MC:h {
-                ...
+                ...Yes!
             }
         % end if 4.3 %
 
         @ {
             Drake wraps his arms around you and buries his face in your hair. You feel his ragged breaths against you.
+        }
+        @D:n {
+            Hey, $LN?
+        }
+        @MC:n {
+            Yeah?
         }
         @D:h {
             I won't let you down, $LN. I promise.
