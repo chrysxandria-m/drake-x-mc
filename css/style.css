@@ -113,6 +113,13 @@ section {
     border-radius: 8px;
 }
 
+#invisible-profile {
+    border: 1px solid midnightblue;
+    background-image: radial-gradient(circle at center, midnightblue, midnightblue);
+    background-size: contain;
+    border-radius: 8px;
+}
+
 .name {
     padding: 6px 20px;
 
