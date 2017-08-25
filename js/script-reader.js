@@ -44,7 +44,7 @@ class ScriptReader {
     }
 
     _onReadSuccess(response) {
-        response.text().then(this._onReadProcessed)
+        return response.text();
     }
 
     _onReadError(error) {
@@ -55,7 +55,9 @@ class ScriptReader {
         this.names = names;
         console.log('TODO: fix this hardcoded value')
         // fetch returns a promise: let promise1 = fetch(...);
-        return fetch('https://chrysxandria-m.github.io/drake-x-mc/writing/ending.txt').then(this._onReadSuccess, this._onReadError);
+        return fetch('https://chrysxandria-m.github.io/drake-x-mc/writing/ending.txt')
+            .then(this._onReadSuccess, this._onReadError)
+            .then(this._onReadProcessed);
     }
 
     printError(message, line) {
