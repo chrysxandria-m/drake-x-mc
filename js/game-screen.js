@@ -57,18 +57,35 @@ class GameScreen {
         }
     }
 
+    // hoverText: http://jsfiddle.net/xaAN3/
+    addHoverText(e) {
+        let currElem = e.currentTarget;
+        let titleElem = currElem.querySelector('.title');
+        if (!titleElem) { // titleElem not created
+            let newTitleElem = document.createElement('span');
+            newTitleElem.classList.add('title');
+            newTitleElem.textContent = currElem.getAttribute('title');
+            currElem.appendChild(newTitleElem);
+        } else if (titleElem.textContent.length === 0) { // titleElem exists but not populated
+            titleElem.textContent = currElem.getAttribute('title');
+        } else { // titleElem exists and populated
+            titleElem.textContent = '';
+        }
+    }
+
     displayNextScreen(e) {
+        // bug fix for skipping screens
         if (e) {
             e.stopPropagation();
         }
 
         let result = this.scriptReader.nextScreen();
+
         // endgame
         if (!result) {
             this.finishGame();
             return;
         }
-        this.setScreenActive(result.type);
 
         // make <article> clickable only if necessary
         const articleElem = document.querySelector('article');
@@ -79,10 +96,13 @@ class GameScreen {
             articleElem.classList.add('can-click');
         }
 
+        this.setScreenActive(result.type);
         const elem = document.querySelector('#' + g.types[result.type]);
-        if (result.type === 'narrator') {
+
+        if (result.type === 'narrator') { // narrator
             const textElem = elem.querySelector('.text');
             this.updateTextContent(textElem, result.text);
+
         } else { // mc, choice, or other
             // set name and text
             const nameElem = elem.querySelector('.name');
@@ -92,11 +112,11 @@ class GameScreen {
 
             // set profile image
             const profileElem = elem.querySelector('.profile');
-            if (result.type === 'other') {
+            if (result.type === 'other') { // other
                 profileElem.textContent = '';
                 let profileKey = result.shortName + '-' + result.emotion + '.jpg';
                 profileElem.style.backgroundImage = 'url(img/' + profileKey + ')';
-            } else {
+            } else { // mc or choice
                 profileElem.textContent = g.smileys[result.emotion];
                 profileElem.style.backgroundImage = 'radial-gradient(circle at center, #' +
                 g.emotions[result.emotion][0] + ', #' + g.emotions[result.emotion][1] + ')';
@@ -108,14 +128,17 @@ class GameScreen {
                 const choicesElem = elem.querySelector('.choices');
                 choicesElem.innerHTML = ''
 
+                // create new choices
                 for (let choiceKey in result.choices) {
                     const newElem = document.createElement('div');
                     this.updateTextContent(newElem, result.choices[choiceKey]);
 
                     if (choiceKey.indexOf('*') !== -1) { // unavailable choice
                         let hoverText = choiceKey.slice(choiceKey.indexOf('*') + 1);
-                        newElem.setAttribute("data-balloon", hoverText);
-                        newElem.setAttribute("data-balloon-pos", 'up');
+                        newElem.setAttribute("title", hoverText);
+                        newElem.addEventListener('click', this.addHoverText);
+                        // newElem.setAttribute("data-balloon", hoverText);
+                        // newElem.setAttribute("data-balloon-pos", 'up');
                         newElem.classList.add('invalid-choice')
                     } else { // regular choice
                         newElem.dataset.id = choiceKey;

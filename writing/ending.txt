@@ -28,8 +28,8 @@ Olivia[O]
 }
 @MC:n {
     $P...
-    <[1.1*These choices are in the actual trr finale!] I love you too.>
-    <[1.2*These choices are in the actual trr finale!] I'm not sure about this.>
+    <[1.1*This choice is in the actual trr finale!] I love you too.>
+    <[1.2*This choice is in the actual trr finale!] I'm not sure about this.>
     <[1.3] I'm so sorry... I'm falling for someone else.>
 }
 
