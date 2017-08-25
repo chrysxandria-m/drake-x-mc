@@ -128,7 +128,7 @@ Olivia[O]
         @B:s {
             House Beaumont is completely, utterly ruined. Ruined!
         }
-        @B:s {
+        @B:n {
             Tell me, did we matter at all to you, $MC?
         }
         @MC {
@@ -172,10 +172,10 @@ Olivia[O]
                 Maxwell catches himself and shakes his head.
             }
             @M:s {
-                Sorry MC, I shouldn’t take this out on you.
+                Sorry $MC, I shouldn’t take this out on you.
             }
             @M:s {
-                It’s just, so many things-- I mean, so many people--are screwed now.
+                It’s just, so many things--I mean, so many people--are screwed now.
             }
             @MC:s {
                 You don’t have to tell me. I know.
@@ -205,7 +205,7 @@ Olivia[O]
                 Maxwell turns to leave, then stops to look at you.
             }
             @M:n {
-                Hey, MC... I know it’s hard right now. But it's like I said before.
+                Hey, $MC... I know it’s hard right now. But it's like I said before.
             }
             @M:h {
                 Whether you’re queen or not, you'll always be a part of House Beaumont.
@@ -335,7 +335,7 @@ Olivia[O]
             (You decide to follow Olivia out of the palace...)
         }
         @ {
-            (...The two of you discuss her situation and reach an understanding.)
+            (...Olivia tells you why she's leaving the competition.)
         }
         @O:n {
             In any case, you've got to do this now for the both of us.
@@ -583,7 +583,7 @@ Olivia[O]
                 I just thought we both wanted this.
             }
             @D:s {
-                I do want this, $LN. More than anything. I should never have let you doubt that.
+                I do want this, $LN. More than anything. I never should have let you doubt that.
             }
             @ {
                 Drake closes his eyes and rubs his temples.
